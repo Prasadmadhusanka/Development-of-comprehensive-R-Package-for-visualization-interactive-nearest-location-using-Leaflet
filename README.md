@@ -16,13 +16,13 @@ The motivation behind the development of this R package lies in the need to empo
 
 ### Package Overview
 
-This R package designed to enhance location-based decision-making through interactive visualization. The package use [Leaflet](https://leafletjs.com/), a powerful open-source R package for interactive maps, **httr,, jsonlite, utils, sf** and three external geographic APIs to provide current location of user’s with valuable information about their surroundings. The package’s flexible to allow users to customize basemaps according to their preferences. With options such as **![OpenStreeMap](https://www.openstreetmap.org/#map=5/51.33/10.45), ![EsriWorldImagery](https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9)** and **![OpenTopoMap](https://opentopomap.org/#map=5/49.023/10.020)**, users can tailor the visualization experience to suit their needs.
+This R package designed to enhance location-based decision-making through interactive visualization. The package use **[Leaflet](https://leafletjs.com/)**, a powerful open-source R package for interactive maps, **httr,, jsonlite, utils, sf** and three external geographic APIs to provide current location of user’s with valuable information about their surroundings. The package’s flexible to allow users to customize basemaps according to their preferences. With options such as **[OpenStreeMap](https://www.openstreetmap.org/#map=5/51.33/10.45), [EsriWorldImagery](https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9)** and **[OpenTopoMap](https://opentopomap.org/#map=5/49.023/10.020)**, users can tailor the visualization experience to suit their needs.
 
 ### Arguments:
 
-•	basemap { **OpenStreeMap , EsriWorldImagery , OpenTopoMap** }
-•	category { **accommodation.hotel , commercial.supermarket , catering.restaurant , catering.cafe , healthcare.pharmacy , healthcare.hospital , education.library , entertainment.cinema** }
-•	output_format { **csv , geojson , kml** }
+- basemap { **OpenStreeMap , EsriWorldImagery , OpenTopoMap** }
+- category { **accommodation.hotel , commercial.supermarket , catering.restaurant , catering.cafe , healthcare.pharmacy , healthcare.hospital , education.library , entertainment.cinema** }
+- output_format { **csv , geojson , kml** }
 
 **The developed R package introduces a set of functions to enhance the location-based experience for users as follows;**
 
@@ -39,5 +39,30 @@ This R package designed to enhance location-based decision-making through intera
 - **Tourism and Travel Planning:** Travelers can quickly locate services and points of interest in a new city, enabling them to make efficient plans.
 - **Emergency Situations:** During emergencies, individuals can easily identify the nearest hospitals and pharmacies. 
 - **Business Decision-Making:** Entrepreneurs can analyze the distribution of competitors and potential customers to make informed business decisions.
+
+## Methodology 
+
+### Data Description and Exploration
+
+This package uses Google Location API and ipinfo API for obtaining the user’s current location and details of current location. This package also uses data extracted from an **[GeoAPIfy](https://www.geoapify.com/#:~:text=Geoapify%20is%20a%20feature%2Drich,%2C%20geodata%20access%2C%20and%20more.)**, which provides information about various important locations in a given geographical area. The data includes attributes such as location name, geographical coordinates, street name, and many more. The URL of the API can be customized according to the customer requirements. For this package URL was customized to 50 numbers of point’s lies within the 10km range. 
+
+`category <- "accommodation.hotel"
+longitude <- 7.6009394 # When executing computer obtain this from Google location API
+latitude <- 51.956711 # When executing computer obtain this from Google location API
+api_url <- paste0("https://api.geoapify.com/v2/places?categories=",
+                     category,
+                     "&filter=circle:",
+                     longitude,",",
+                     latitude,
+                     ",5000&bias=proximity:",
+                     longitude,",",
+                     latitude,
+                     "&lang=en&limit=50&apiKey=YOUR API KEY"
+  )
+print(api_url)
+#> [1] "https://api.geoapify.com/v2/places?categories=accommodation.hotel&filter=circle:7.6009394,51.956711,5000&bias=proximity:7.6009394,51.956711&lang=en&limit=50&apiKey=YOUR API KEY"`
+
+Understanding the structure and content of the data is essential for maximizing the utility of the Interactive Nearest Location Visualization R package. The data exploration process provides available data attributes, their distributions, and potential patterns. Here are some key aspects of data exploration:
+
 
 

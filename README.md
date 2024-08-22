@@ -2,7 +2,7 @@
 
 ## Repository Overview 
 
-This repository contains the complete development process and documentation for creating an R package developed for visualizing interactive nearest locatins using Leaflet. The package, 
+This repository contains the complete development process and documentation for creating an R package **"nearPointR"** developed for visualizing interactive nearest locatins using Leaflet. The package, 
 
 ## Table of Content
 
@@ -65,6 +65,63 @@ print(api_url)
 ```
 
 Understanding the structure and content of the data is essential for maximizing the utility of the Interactive Nearest Location Visualization R package. The data exploration process provides available data attributes, their distributions, and potential patterns. Here are some key aspects of data exploration:
+
+**1.	Data Attributes:**
+
+On map view, following data attributes can be seen in popups. And also these data attributes can be seen in downloaded formats (csv, geojson, kml)
+
+- Location Name: The name of the important location, such as a specific restaurant or pharmacy.
+- Latitude and Longitude: The geographic coordinates that pinpoint the location on a map.
+- Distance: distance to specific location from user’s current location
+- Street- Street number
+- House number – House number of the location
+- Postal code – Postal code for specific location
+- Opening hours – Opening hours for service
+- Phone number – Contact number
+- Web site – Web site relevant to service
+
+**2. Spatial Distribution:**
+
+Analyzing the distribution of location data on a map helps identify clusters and trends. Visualizing the spatial distribution of various location types can reveal the geographic availability of different services.
+
+**3. Proximity Analysis and Navigation:**
+
+By calculating the distances between the user’s current location and the nearest important locations of different types, it’s possible to understand the accessibility of various services. This analysis can highlight areas that may lack specific services within a certain radius
+
+### R Package Development 
+
+The development and implementation of the "nearPointR" package involves several key steps, ranging from package creation to visualization and deployment. Below is a detailed overview of the entire process.
+
+#### 1. **Initializing the Package with `create_package()`**
+
+**a. Initialize the Package:**
+
+- Start by calling the `create_package()` function to set up a new package in a specified directory on computer. If the directory doesn't exist yet, `create_package()` will create it.
+
+   ```r
+   create_package("~/path/to/nearPointR")
+   ```
+
+**b. Leverage the `devtools` Package:**
+
+- The `devtools` package is commonly used by R developers for creating, testing, and managing R packages. It provides a comprehensive suite of functions that simplify the package development process.
+
+- When create a new R package using the `create_package()` function from the `devtools` package, it sets up a directory structure that includes several critical files and subdirectories. These components are vital for the organization, building, and distribution of R package.
+
+#### 2. **Key Files and Subdirectories Created by `create_package()`**
+
+- **`.Rbuildignore` and `.gitignore`:** These files help control what gets included in the final package and what is tracked by version control. `.Rbuildignore` ensures that unnecessary files are excluded during the build process, while `.gitignore` prevents certain files from being tracked by Git.
+
+- **`DESCRIPTION`:** This file is crucial for defining the package's identity, including its name, version, author information, and dependencies. It is essential for the package's distribution and installation, as it provides the metadata that R and package management tools use to handle the package.
+
+- **`NAMESPACE`:** The `NAMESPACE` file manages the package's interface, controlling which functions and objects are exported for use by others. It also ensures that dependencies are correctly imported and that there is no conflict with other packages.
+
+- **`R/ Directory`:** This is where the core code of your package resides, making it the most important part of your package. All your functions, classes, and other R code will be stored here.
+
+- **`.Rproj File and .Rproj.user Directory`:** The `.Rproj` file and `.Rproj.user` directory enhance the development experience in RStudio by managing your project-specific settings and environment. This includes configurations for your workspace, build tools, and other session-specific settings.
+
+These files and directories are fundamental to the structure and functionality of your R package, ensuring that it is well-organized, easy to develop, and ready for distribution.
+
 
 
 

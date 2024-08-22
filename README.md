@@ -124,13 +124,13 @@ These files and directories are fundamental to the structure and functionality o
 
 ![create_package]()
 
-#### 2. **Initialize Git with `use_git()`**
+#### 3. **Initialize Git with `use_git()`**
 
 Next, use the `use_git()` function to initialize a Git repository in current project directory. This function is often used alongside `devtools` during R package development.
 
 ![use_git]()
 
-#### 3. **Deveploing Functions**
+#### 4. Deveploing Functions
 
 There are five functions developed for R package as follows;
 
@@ -140,19 +140,19 @@ There are five functions developed for R package as follows;
 - `nearest_locations` :	Visualizing the Nearest Important Locations relatively User's Current Location on a map using the Leaflet library
 - `show_list` :	Showing the details of Nearest Important Locations relatively User's Current Location as dataframe
 
-#### 4. Create R Script Files with use_r()
+#### 5. Create R Script Files with use_r()
 
 Next, use the use_r() function to create new R script files within your R package project. These files are stored in the R/ directory, which is the central location for all the R functions and code that form the core functionality of your package.
 
 ![use_r]()
 
-#### **Load Package with `load_all()`**
+#### 6.Load Package with `load_all()`
 
 The `load_all()` function from the `devtools` package is an essential tool for R package development. It simplifies the process of loading and testing  package’s functions as it work. When call `load_all()`, it loads all the functions and objects from  package’s `R/` directory directly into your R session. This allows you to test and interact with  package as if it were installed, but without the need to go through the full build and installation process.
 
 Instead of installing the package `load_all()` lets quickly load the package code for immediate use. This is particularly useful for rapid development and testing. Each time make changes to  package code, running `load_all()` ensures that the most recent version is loaded into  R session, allowing to instantly test updates without reinstalling the package.
 
-#### **6. Validate R Package with `check()`**
+#### 7. Validate R Package with `check()`
 
 Next, use the `check()` function from the `devtools` package to ensure the quality and integrity of  R package. Running `check()` helps confirm that  package meets CRAN standards and follows best practices for R package development. 
 
@@ -166,7 +166,7 @@ The function provides a detailed report of any errors, warnings, or notes, helpi
 
 ![check]()
 
-#### **7. Edit the `DESCRIPTION` File**
+#### 8. Edit the `DESCRIPTION` File
 
 Next, edit the `DESCRIPTION` file, which is a crucial part of any R package. This file contains important metadata about package, such as its name, version, and dependencies. This information helps others understand the package’s purpose and requirements.
 
@@ -180,7 +180,7 @@ Accurate and complete information in the `DESCRIPTION` file is essential for pac
 
 ![edit_desc]()
 
-#### **8. Add an MIT License with `use_mit_license()`**
+#### 9. Add an MIT License with `use_mit_license()`
 
 Use the `use_mit_license()` function to add an MIT License to  R package. The MIT License is a widely-used, simple, and permissive open-source license. It allows others to use, modify, and distribute code freely, as long as they include the original copyright notice and license text.
 
@@ -190,7 +190,7 @@ Including this license file in  package clearly communicates the terms under whi
 
 ![mit_lic]()
 
-#### **Document R Package with `document()`**
+#### 10. Document R Package with `document()`
 
 Call the `document()` function from the `devtools` package to generate documentation for  R package based on comments and annotations in  R script files. This function converts Roxygen2 comments into `.Rd` files, which are the standard format for R package documentation.
 
@@ -204,13 +204,13 @@ Using `document()` keeps  package’s documentation up-to-date and aligned with 
 
 ![document]()
 
-#### **Run `check()` Again**
+#### 11. Run `check()` Again
 
 After using the `document()` function to update the package documentation, it’s important to run `check()` once more. This step verifies that everything in R package is working correctly and follows best practices. Ideally, `check()` should now pass `R CMD check` with 0 errors, 0 warnings, and 0 notes, ensuring the R package is in good shape.
 
 ![check_again]()
 
-#### **Install Package with `install()`**
+#### 12. Install Package with `install()`
 
 The `install()` function from the `devtools` package installs  R package locally in machine. This is a key step in development, as it allow to test and use the package just like any other installed package from CRAN or another repository. 
 
@@ -224,7 +224,7 @@ This function is crucial for the development workflow, allowing  to iteratively 
 
 ![install]()
 
-#### **Set Up Testing with `use_testthat()`**
+#### 13. Set Up Testing with `use_testthat()`
 
 The `use_testthat()` function from the `usethis` package sets up the `testthat` framework for testing  R package. `testthat` is a popular tool for unit testing in R, helping to ensure R package functions correctly.
 
@@ -238,7 +238,7 @@ This function helps to get started with testing your package efficiently.
 
 ![test]()
 
-#### **Add Dependencies with `use_package()`**
+#### 14. Add Dependencies with `use_package()`
 
 The `use_package()` function from the `usethis` package makes it easy to add package dependencies to R package. This function helps to declare which other packages that R package depends on, ensuring they are installed and available when  package is used.
 
@@ -249,7 +249,7 @@ Following shows what `use_package()` does:
 
 By properly declaring dependencies, ensure that anyone using or developing  package will have the required packages installed, which helps prevent issues related to missing dependencies.
 
-#### **Create a README with `use_readme_rmd()`**
+#### 15. Create a README with `use_readme_rmd()`
 
 The `use_readme_rmd()` function from the `usethis` package sets up a README file forR package using R Markdown. R Markdown lets create a README that can include both code and narrative text.
 
@@ -262,7 +262,7 @@ This function helps to create a well-structured README that provides clear and c
 
 ![rmd]()
 
-#### **15. Final Checks and Installation**
+#### 16. Final Checks and Installation
 
 After setting up  R package with functions, documentation, and tests,  need to ensure everything is working correctly. This is where the `check()` and `install()` functions come in:
 
@@ -273,7 +273,7 @@ After setting up  R package with functions, documentation, and tests,  need to e
 
 ![install_final]()
 
-#### **16. Creating Vignettes**
+#### 17. Creating Vignettes
 
 Creating vignettes for R package is a key step in providing detailed documentation and usage examples. Vignettes are comprehensive guides or tutorials that show how to use R package in a more detailed and narrative way than standard documentation.
 
@@ -309,11 +309,39 @@ Open the new R Markdown file in the vignettes directory and edit it to include:
 
 Use devtools::build_vignettes() and devtools::check() to make sure  vignette is included and works correctly.
 
-#### **17. Building and Installing the Package**
+#### 18. Building and Installing the Package
 
 To compile your R package into a .tar.gz file that can be shared or uploaded to repositories like CRAN or GitHub, use
 
 ```{r}
 devtools::build()
 ```
+## Results 
 
+The results provide a deeper understanding of the spatial distribution of important locations, their accessibility, and their characteristics. Here, discuss obtained results and their significance
+
+```{r}
+library(nearPointR)
+```
+
+**1. Visualizes the user’s current location on an interactive map**
+
+```{r}
+basemap <- "OpenStreetMap"
+current_location(basemap)
+```
+![currentloc1]()
+
+```{r}
+basemap <- "EsriWorldImagery"
+current_location(basemap)
+```
+**2. Spatial Distribution and Accessibility**
+
+The spatial distribution of different types of important locations offers a clear overview of areas with high concentrations of services. This information help users in identifying commercial zones, popular residential areas, and potential gaps in service coverage. For instance, a dense cluster of restaurants in a particular area might indicate a vibrant dining scene, while a sparse distribution of pharmacies could highlight a need for improved accessibility to healthcare services.
+
+```{r}
+category <- "healthcare.pharmacy"
+basemap <- "EsriWorldImagery"
+nearest_locations(category,basemap)
+```

@@ -122,6 +122,198 @@ The development and implementation of the "nearPointR" package involves several 
 
 These files and directories are fundamental to the structure and functionality of your R package, ensuring that it is well-organized, easy to develop, and ready for distribution.
 
+![create_package]()
 
+#### 2. **Initialize Git with `use_git()`**
 
+Next, use the `use_git()` function to initialize a Git repository in current project directory. This function is often used alongside `devtools` during R package development.
+
+![use_git]()
+
+#### 3. **Deveploing Functions**
+
+There are five functions developed for R package as follows;
+
+- `current_location` :	Visualizing the User's Current Location on a map using the Leaflet library
+- `download_list` : 	Downloading the dataframe of Nearest Important Locations relatively User's Current Location as csv, geojson or kml format
+- `navigate_to_closest` :	Navigate to the Closest Important Location relatively User's Current Location using Google map in your Web browser
+- `nearest_locations` :	Visualizing the Nearest Important Locations relatively User's Current Location on a map using the Leaflet library
+- `show_list` :	Showing the details of Nearest Important Locations relatively User's Current Location as dataframe
+
+#### 4. Create R Script Files with use_r()
+
+Next, use the use_r() function to create new R script files within your R package project. These files are stored in the R/ directory, which is the central location for all the R functions and code that form the core functionality of your package.
+
+![use_r]()
+
+#### **Load Package with `load_all()`**
+
+The `load_all()` function from the `devtools` package is an essential tool for R package development. It simplifies the process of loading and testing  package’s functions as it work. When call `load_all()`, it loads all the functions and objects from  package’s `R/` directory directly into your R session. This allows you to test and interact with  package as if it were installed, but without the need to go through the full build and installation process.
+
+Instead of installing the package `load_all()` lets quickly load the package code for immediate use. This is particularly useful for rapid development and testing. Each time make changes to  package code, running `load_all()` ensures that the most recent version is loaded into  R session, allowing to instantly test updates without reinstalling the package.
+
+#### **6. Validate R Package with `check()`**
+
+Next, use the `check()` function from the `devtools` package to ensure the quality and integrity of  R package. Running `check()` helps confirm that  package meets CRAN standards and follows best practices for R package development. 
+
+The `check()` function performs automated checks on various aspects of the package, including its structure, documentation, and code quality. It runs the same checks as `R CMD check`, the standard for package validation in R.
+
+- **Documentation:** It verifies that all functions and datasets are properly documented, ensuring that comments are correctly converted into `.Rd` files and that all documentation fields are complete.
+- **Code Quality:** It checks that code follows standard R coding practices, such as naming conventions and formatting, to maintain consistency and readability.
+- **Dependencies:** It ensures that all package dependencies are correctly specified and that the package can be built and installed without any missing dependencies.
+
+The function provides a detailed report of any errors, warnings, or notes, helping you identify and resolve issues before distributing your package.
+
+![check]()
+
+#### **7. Edit the `DESCRIPTION` File**
+
+Next, edit the `DESCRIPTION` file, which is a crucial part of any R package. This file contains important metadata about package, such as its name, version, and dependencies. This information helps others understand the package’s purpose and requirements.
+
+Properly editing the `DESCRIPTION` file is key to ensuring that your package is correctly configured, meets standards, and works as expected.
+
+- **Dependencies:** Lists the R packages  package relies on, ensuring that all necessary dependencies are installed when package is used.
+- **License:** Specifies the license under which package is distributed, informing users of their rights and obligations.
+- **Additional Info:** Includes details like the package’s URL, where to report bugs, and the names of collaborators.
+
+Accurate and complete information in the `DESCRIPTION` file is essential for package’s distribution and use.
+
+![edit_desc]()
+
+#### **8. Add an MIT License with `use_mit_license()`**
+
+Use the `use_mit_license()` function to add an MIT License to  R package. The MIT License is a widely-used, simple, and permissive open-source license. It allows others to use, modify, and distribute code freely, as long as they include the original copyright notice and license text.
+
+When call `use_mit_license()`, it creates a `LICENSE` file in the root directory of  package. This file contains the text of the MIT License and includes placeholders for the author’s name and the year, which should update to reflect details.
+
+Including this license file in  package clearly communicates the terms under which others can use, modify, and distribute  code. The MIT License is permissive and widely understood, which can encourage other developers to use and contribute to package while protecting  rights as the author.
+
+![mit_lic]()
+
+#### **Document R Package with `document()`**
+
+Call the `document()` function from the `devtools` package to generate documentation for  R package based on comments and annotations in  R script files. This function converts Roxygen2 comments into `.Rd` files, which are the standard format for R package documentation.
+
+Following shows what `document()` does:
+
+- **Creates `.Rd` Files:** It generates documentation files in the `man/` directory, which are used to create help pages for  functions, datasets, and other objects.
+- **Updates Documentation:** It ensures that the documentation matches the latest comments in R scripts.
+- **Updates `NAMESPACE`:** It adjusts the `NAMESPACE` file to include any new functions or datasets that documented and updates the exports as needed.
+
+Using `document()` keeps  package’s documentation up-to-date and aligned with  code.
+
+![document]()
+
+#### **Run `check()` Again**
+
+After using the `document()` function to update the package documentation, it’s important to run `check()` once more. This step verifies that everything in R package is working correctly and follows best practices. Ideally, `check()` should now pass `R CMD check` with 0 errors, 0 warnings, and 0 notes, ensuring the R package is in good shape.
+
+![check_again]()
+
+#### **Install Package with `install()`**
+
+The `install()` function from the `devtools` package installs  R package locally in machine. This is a key step in development, as it allow to test and use the package just like any other installed package from CRAN or another repository. 
+
+Follows shows what `install()` does:
+
+- **Builds and Installs:** It builds the package from source, including compiling any C/C++ code if needed, and installs it into local R library.
+- **Loads for Testing:** After installation, can load the package using `library(packageName)` and test it in R environment.
+- **Applies Changes:** Each time make changes to R package, use `install()` to apply those changes locally and ensure everything works correctly before finalizing or distributing the package.
+
+This function is crucial for the development workflow, allowing  to iteratively build, install, and test R package.
+
+![install]()
+
+#### **Set Up Testing with `use_testthat()`**
+
+The `use_testthat()` function from the `usethis` package sets up the `testthat` framework for testing  R package. `testthat` is a popular tool for unit testing in R, helping to ensure R package functions correctly.
+
+Following shows what `use_testthat()` does:
+
+- **Creates a Testing Directory:** It creates a `tests/testthat/` directory in  package structure, where  organize and run  tests.
+- **Adds Dependency:** It adds `testthat` as a dependency in package’s `DESCRIPTION` file, making sure it’s installed when the package is used.
+- **Generates Sample Tests:** It creates a sample test file (`tests/testthat/testthat.R`) with basic content to help get started with writing tests and sets up the necessary configuration for running tests with `testthat`.
+
+This function helps to get started with testing your package efficiently.
+
+![test]()
+
+#### **Add Dependencies with `use_package()`**
+
+The `use_package()` function from the `usethis` package makes it easy to add package dependencies to R package. This function helps to declare which other packages that R package depends on, ensuring they are installed and available when  package is used.
+
+Following shows what `use_package()` does:
+
+- **Updates `DESCRIPTION`:** It adds the specified package to the `Imports`, `Depends`, or `Suggests` field in package’s `DESCRIPTION` file, based on the arguments provided.
+- **Updates `NAMESPACE`:** It modifies the `NAMESPACE` file to import functions from the specified package, making them available for use in package.
+
+By properly declaring dependencies, ensure that anyone using or developing  package will have the required packages installed, which helps prevent issues related to missing dependencies.
+
+#### **Create a README with `use_readme_rmd()`**
+
+The `use_readme_rmd()` function from the `usethis` package sets up a README file forR package using R Markdown. R Markdown lets create a README that can include both code and narrative text.
+
+Following shows what `use_readme_rmd()` does:
+
+- **Creates a README File:** It generates a `README.Rmd` file with a basic template to help to get started.
+- **Includes a Template:** The template has placeholders for key sections like package description, installation instructions, and usage examples.
+
+This function helps to create a well-structured README that provides clear and comprehensive information about R package.
+
+![rmd]()
+
+#### **15. Final Checks and Installation**
+
+After setting up  R package with functions, documentation, and tests,  need to ensure everything is working correctly. This is where the `check()` and `install()` functions come in:
+
+- **`check()`:** Verifies that R package is well-structured and meets all necessary standards.
+- **`install()`:** Installs the package locally so can test it as if it were a finished product.
+
+![check_final]()
+
+![install_final]()
+
+#### **16. Creating Vignettes**
+
+Creating vignettes for R package is a key step in providing detailed documentation and usage examples. Vignettes are comprehensive guides or tutorials that show how to use R package in a more detailed and narrative way than standard documentation.
+
+![vigneetee]()
+
+Following shows simple step-by-step guide to creating vignettes:
+
+**a. Set Up knitr and rmarkdown**
+
+Vignettes are written in R Markdown (.Rmd files). Install the knitr and rmarkdown packages to create and render them.
+
+```{r}
+install.packages(c("knitr", "rmarkdown"))
+```
+**b. Add the Vignettes Directory**
+
+Create a vignettes directory in  package structure if it doesn’t exist. This is where store all vignette files.
+
+```{r}
+usethis::use_vignette("vignette-name")
+```
+This command creates a new R Markdown file and updates the DESCRIPTION file.
+
+**c. Edit the Vignette**
+
+Open the new R Markdown file in the vignettes directory and edit it to include:
+
+- Title and Metadata: Add a title and other details at the top using YAML syntax.
+- Narrative Text: Write detailed explanations of package’s features and uses.
+- Code Chunks: Include R code examples wrapped in {r} to show how to use  package.
+
+**d. Build and Test**
+
+Use devtools::build_vignettes() and devtools::check() to make sure  vignette is included and works correctly.
+
+#### **17. Building and Installing the Package**
+
+To compile your R package into a .tar.gz file that can be shared or uploaded to repositories like CRAN or GitHub, use
+
+```{r}
+devtools::build()
+```
 

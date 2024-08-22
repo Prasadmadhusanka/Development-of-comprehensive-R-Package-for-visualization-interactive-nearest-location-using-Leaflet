@@ -16,7 +16,7 @@ The motivation behind the development of this R package lies in the need to empo
 
 ### Package Overview
 
-This R package designed to enhance location-based decision-making through interactive visualization. The package use ![Leaflet](https://leafletjs.com/), a powerful open-source R package for interactive maps, **httr,, jsonlite, utils, sf** and three external geographic APIs to provide current location of user’s with valuable information about their surroundings. The package’s flexible to allow users to customize basemaps according to their preferences. With options such as **![OpenStreeMap](https://www.openstreetmap.org/#map=5/51.33/10.45), ![EsriWorldImagery](https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9)** and **![OpenTopoMap](https://opentopomap.org/#map=5/49.023/10.020)**, users can tailor the visualization experience to suit their needs.
+This R package designed to enhance location-based decision-making through interactive visualization. The package use [Leaflet](https://leafletjs.com/), a powerful open-source R package for interactive maps, **httr,, jsonlite, utils, sf** and three external geographic APIs to provide current location of user’s with valuable information about their surroundings. The package’s flexible to allow users to customize basemaps according to their preferences. With options such as **![OpenStreeMap](https://www.openstreetmap.org/#map=5/51.33/10.45), ![EsriWorldImagery](https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9)** and **![OpenTopoMap](https://opentopomap.org/#map=5/49.023/10.020)**, users can tailor the visualization experience to suit their needs.
 
 ### Arguments:
 

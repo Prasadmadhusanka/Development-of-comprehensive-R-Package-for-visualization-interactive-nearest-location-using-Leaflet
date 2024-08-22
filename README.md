@@ -46,7 +46,8 @@ This R package designed to enhance location-based decision-making through intera
 
 This package uses Google Location API and ipinfo API for obtaining the user’s current location and details of current location. This package also uses data extracted from an **[GeoAPIfy](https://www.geoapify.com/#:~:text=Geoapify%20is%20a%20feature%2Drich,%2C%20geodata%20access%2C%20and%20more.)**, which provides information about various important locations in a given geographical area. The data includes attributes such as location name, geographical coordinates, street name, and many more. The URL of the API can be customized according to the customer requirements. For this package URL was customized to 50 numbers of point’s lies within the 10km range. 
 
-`category <- "accommodation.hotel"
+```{r}
+category <- "accommodation.hotel"
 longitude <- 7.6009394 # When executing computer obtain this from Google location API
 latitude <- 51.956711 # When executing computer obtain this from Google location API
 api_url <- paste0("https://api.geoapify.com/v2/places?categories=",
@@ -60,7 +61,8 @@ api_url <- paste0("https://api.geoapify.com/v2/places?categories=",
                      "&lang=en&limit=50&apiKey=YOUR API KEY"
   )
 print(api_url)
-#> [1] "https://api.geoapify.com/v2/places?categories=accommodation.hotel&filter=circle:7.6009394,51.956711,5000&bias=proximity:7.6009394,51.956711&lang=en&limit=50&apiKey=YOUR API KEY"`
+#> [1] "https://api.geoapify.com/v2/places?categories=accommodation.hotel&filter=circle:7.6009394,51.956711,5000&bias=proximity:7.6009394,51.956711&lang=en&limit=50&apiKey=YOUR API KEY"
+```{r}
 
 Understanding the structure and content of the data is essential for maximizing the utility of the Interactive Nearest Location Visualization R package. The data exploration process provides available data attributes, their distributions, and potential patterns. Here are some key aspects of data exploration:
 

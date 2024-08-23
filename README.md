@@ -6,7 +6,7 @@ This repository contains the complete development process and documentation for 
 
 ## Table of Content
 
--[Introduction and Motivation](#introduction-and-motivation:)
+- [Introduction and Motivation](#introduction-and-motivation)
 
 ## Introduction and Motivation
 

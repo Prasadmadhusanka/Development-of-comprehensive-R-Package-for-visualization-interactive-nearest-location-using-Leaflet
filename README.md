@@ -16,7 +16,7 @@ The motivation behind the development of this R package lies in the need to empo
 
 ### Package Overview
 
-This R package designed to enhance location-based decision-making through interactive visualization. The package use **[Leaflet](https://leafletjs.com/)**, a powerful open-source R package for interactive maps, **httr,, jsonlite, utils, sf** and three external geographic APIs to provide current location of user’s with valuable information about their surroundings. The package’s flexible to allow users to customize basemaps according to their preferences. With options such as **[OpenStreeMap](https://www.openstreetmap.org/#map=5/51.33/10.45), [EsriWorldImagery](https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9)** and **[OpenTopoMap](https://opentopomap.org/#map=5/49.023/10.020)**, users can tailor the visualization experience to suit their needs.
+This R package designed to enhance location-based decision-making through interactive visualization. The package use **[Leaflet](https://leafletjs.com/)**, a powerful open-source R package for interactive maps, **httr, jsonlite, utils, sf** and three external geographic APIs to provide current location of user’s with valuable information about their surroundings. The package’s flexible to allow users to customize basemaps according to their preferences. With options such as **[OpenStreeMap](https://www.openstreetmap.org/#map=5/51.33/10.45), [EsriWorldImagery](https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9)** and **[OpenTopoMap](https://opentopomap.org/#map=5/49.023/10.020)**, users can tailor the visualization experience to suit their needs.
 
 ### Arguments:
 
@@ -24,7 +24,7 @@ This R package designed to enhance location-based decision-making through intera
 - category { **accommodation.hotel , commercial.supermarket , catering.restaurant , catering.cafe , healthcare.pharmacy , healthcare.hospital , education.library , entertainment.cinema** }
 - output_format { **csv , geojson , kml** }
 
-**The developed R package introduces a set of functions to enhance the location-based experience for users as follows;**
+**The developed R package introduces a set of functions to enhance the location-based experience for users as follows**
 
 - **current_location:** Visualizes the user's current location on an interactive map
 - **show_list:** Users can select specific types of locations, such as pharmacies, hotels, restaurants, etc. and visualize the nearest 50 locations of the selected type within a 10km 
@@ -336,6 +336,8 @@ current_location(basemap)
 basemap <- "EsriWorldImagery"
 current_location(basemap)
 ```
+![currentloc2]()
+
 **2. Spatial Distribution and Accessibility**
 
 The spatial distribution of different types of important locations offers a clear overview of areas with high concentrations of services. This information help users in identifying commercial zones, popular residential areas, and potential gaps in service coverage. For instance, a dense cluster of restaurants in a particular area might indicate a vibrant dining scene, while a sparse distribution of pharmacies could highlight a need for improved accessibility to healthcare services.
@@ -345,3 +347,71 @@ category <- "healthcare.pharmacy"
 basemap <- "EsriWorldImagery"
 nearest_locations(category,basemap)
 ```
+![phamacy]()
+
+```{r}
+category <- "healthcare.hospital"
+basemap <- "OpenStreetMap"
+nearest_locations(category,basemap)
+```
+![phamacy2]()
+
+**3. Proximity Analysis and Navigation Route Planning**
+
+The average distances to nearest important locations provide users with essential information for planning their routes and optimizing their travel time. The package’s functionality assists users in finding the closest services, reducing travel distances, and making more efficient choices.
+
+```{r}
+category <- "healthcare.hospital"
+navigate_to_closest(category)
+```
+![google]()
+
+After executing Google map will open on your default web browser with best navigation route to closest category marker. **Screenshot of Output** 
+
+**4. Showing nearest locations data as dataframe**
+
+![dataframe]()
+
+**Download the dataframe as csv or geojson or kml format**
+
+```{r}
+category <- "healthcare.pharmacy"
+output_format <- "kml"
+download_list(category,output_format)
+#> writing: substituting ENGCRS["Undefined Cartesian SRS with unknown unit"] for missing CRS
+#> Writing layer `nearest_locations' to data source 
+#>   `nearest_locations.kml' using driver `KML'
+#> Warning in CPL_write_ogr(obj, dsn, layer, driver,
+#> as.character(dataset_options), : GDAL Error 6: Cannot find coordinate
+#> operations from `ENGCRS["Undefined Cartesian SRS with unknown
+#> unit",EDATUM["Unknown engineering
+#> datum"],CS[Cartesian,2],AXIS["x",unspecified,ORDER[1],LENGTHUNIT["unknown",0]],AXIS["y",unspecified,ORDER[2],LENGTHUNIT["unknown",0]]]'
+#> to `EPSG:4326'
+#> Warning in CPL_write_ogr(obj, dsn, layer, driver, as.character(dataset_options), : GDAL Message 1: Failed to create coordinate transformation between the input coordinate system and WGS84.  This may be because they are not transformable.  KML geometries may not render correctly.  This message will not be issued any more.
+#> Source:
+#> LOCAL_CS["Undefined Cartesian SRS with unknown unit",
+#>     UNIT["unknown",0],
+#>     AXIS["X",OTHER],
+#>     AXIS["Y",OTHER]]
+#> Writing 50 features with 8 fields and geometry type Point.
+#> Warning in CPL_write_ogr(obj, dsn, layer, driver,
+#> as.character(dataset_options), : GDAL Message 1: Value 'A3' of field
+#> nearest_locations.loc_distance parsed incompletely to integer 0.
+#> Warning in CPL_write_ogr(obj, dsn, layer, driver,
+#> as.character(dataset_options), : GDAL Message 1: Value '22-23' of field
+#> nearest_locations.loc_distance parsed incompletely to integer 22.
+#> Warning in CPL_write_ogr(obj, dsn, layer, driver,
+#> as.character(dataset_options), : GDAL Message 1: Value '2b' of field
+#> nearest_locations.loc_distance parsed incompletely to integer 2.
+#> Warning in CPL_write_ogr(obj, dsn, layer, driver,
+#> as.character(dataset_options), : GDAL Message 1: Value '97-101' of field
+#> nearest_locations.loc_distance parsed incompletely to integer 97.
+```
+
+## Discussion
+
+The analysis of the data set using the Interactive Nearest Location Visualization R package demonstrates its capabilities in providing valuable insights to users. The visualization reveals the concentration of different services, aiding users in identifying popular areas. Proximity analysis indicates the accessibility of various services, with an average distance that can assist users in planning their routes. A deep understanding of the data attributes, patterns, and distributions enables users to make informed decisions when utilizing the package’s functionalists. By combining the power of interactive maps, geographic APIs, and exploratory data analysis, the package provides users with a comprehensive tool for effectively navigating their surroundings and accessing essential services.
+
+## THANK YOU FOR READING THIS DOCUMENTAION
+
+## ENJOY WITH ‘nearPointR’ FOR YOUR DAY TODAY ACTIVITIES

@@ -73,7 +73,7 @@ print(api_url)
 
 Understanding the structure and content of the data is essential for maximizing the utility of the Interactive Nearest Location Visualization R package. The data exploration process provides available data attributes, their distributions, and potential patterns. Here are some key aspects of data exploration:
 
-### **1.	Data Attributes:**
+#### 1.	Data Attributes:
 
 On map view, following data attributes can be seen in popups. And also these data attributes can be seen in downloaded formats (csv, geojson, kml)
 
@@ -87,7 +87,7 @@ On map view, following data attributes can be seen in popups. And also these dat
 - Phone number – Contact number
 - Web site – Web site relevant to service
 
-### **2. Spatial Distribution:**
+#### 2. Spatial Distribution:
 
 Analyzing the distribution of location data on a map helps identify clusters and trends. Visualizing the spatial distribution of various location types can reveal the geographic availability of different services.
 
@@ -99,7 +99,7 @@ By calculating the distances between the user’s current location and the neare
 
 The development and implementation of the "nearPointR" package involves several key steps, ranging from package creation to visualization and deployment. Below is a detailed overview of the entire process.
 
-#### 1. **Initializing the Package with `create_package()`**
+#### 1. Initializing the Package with `create_package()`
 
 **a. Initialize the Package:**
 
@@ -115,7 +115,7 @@ The development and implementation of the "nearPointR" package involves several 
 
 - When create a new R package using the `create_package()` function from the `devtools` package, it sets up a directory structure that includes several critical files and subdirectories. These components are vital for the organization, building, and distribution of R package.
 
-#### 2. **Key Files and Subdirectories Created by `create_package()`**
+#### 2. Key Files and Subdirectories Created by `create_package()`
 
 - **`.Rbuildignore` and `.gitignore`:** These files help control what gets included in the final package and what is tracked by version control. `.Rbuildignore` ensures that unnecessary files are excluded during the build process, while `.gitignore` prevents certain files from being tracked by Git.
 
@@ -131,7 +131,7 @@ These files and directories are fundamental to the structure and functionality o
 
 ![create_package](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/create%20package.PNG)
 
-#### 3. **Initialize Git with `use_git()`**
+#### 3. Initialize Git with `use_git()`
 
 Next, use the `use_git()` function to initialize a Git repository in current project directory. This function is often used alongside `devtools` during R package development.
 
@@ -153,7 +153,7 @@ Next, use the use_r() function to create new R script files within your R packag
 
 ![use_r](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/use_r.png)
 
-#### 6.Load Package with `load_all()`
+#### 6. Load Package with `load_all()`
 
 The `load_all()` function from the `devtools` package is an essential tool for R package development. It simplifies the process of loading and testing  package’s functions as it work. When call `load_all()`, it loads all the functions and objects from  package’s `R/` directory directly into your R session. This allows you to test and interact with  package as if it were installed, but without the need to go through the full build and installation process.
 
@@ -331,7 +331,7 @@ The results provide a deeper understanding of the spatial distribution of import
 library(nearPointR)
 ```
 
-### **1. Visualizes the user’s current location on an interactive map**
+### 1. Visualizes the user’s current location on an interactive map
 
 ```{r}
 basemap <- "OpenStreetMap"
@@ -345,7 +345,7 @@ current_location(basemap)
 ```
 ![currentloc2](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/currentloc%202.PNG)
 
-### **2. Spatial Distribution and Accessibility**
+### 2. Spatial Distribution and Accessibility
 
 The spatial distribution of different types of important locations offers a clear overview of areas with high concentrations of services. This information help users in identifying commercial zones, popular residential areas, and potential gaps in service coverage. For instance, a dense cluster of restaurants in a particular area might indicate a vibrant dining scene, while a sparse distribution of pharmacies could highlight a need for improved accessibility to healthcare services.
 
@@ -363,7 +363,7 @@ nearest_locations(category,basemap)
 ```
 ![phamacy2](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/phamcy2.png)
 
-### **3. Proximity Analysis and Navigation Route Planning**
+### 3. Proximity Analysis and Navigation Route Planning
 
 The average distances to nearest important locations provide users with essential information for planning their routes and optimizing their travel time. The package’s functionality assists users in finding the closest services, reducing travel distances, and making more efficient choices.
 
@@ -375,11 +375,11 @@ navigate_to_closest(category)
 
 After executing Google map will open on your default web browser with best navigation route to closest category marker. **Screenshot of Output** 
 
-### **4. Showing nearest locations data as dataframe**
+### 4. Showing nearest locations data as dataframe
 
 ![dataframe](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/sc1.png)
 
-### **Download the dataframe as csv or geojson or kml format**
+### Download the dataframe as csv or geojson or kml format
 
 ```{r}
 category <- "healthcare.pharmacy"

@@ -2,11 +2,11 @@
 
 ## Repository Overview 
 
-This repository contains the complete development process and documentation for creating an R package **"nearPointR"** developed for visualizing interactive nearest locatins using Leaflet. The package, 
+This repository contains the complete development process and documentation for creating an R package **"nearPointR"** developed for visualizing interactive nearest locatins using Leaflet. 
 
 ## Table of Content
 
--[Introduction and Motivation](introduction-and-motivation:)
+-[Introduction and Motivation](#introduction-and-motivation:)
 
 ## Introduction and Motivation
 

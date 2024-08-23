@@ -122,13 +122,13 @@ The development and implementation of the "nearPointR" package involves several 
 
 These files and directories are fundamental to the structure and functionality of your R package, ensuring that it is well-organized, easy to develop, and ready for distribution.
 
-![create_package]()
+![create_package](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/create%20package.PNG)
 
 #### 3. **Initialize Git with `use_git()`**
 
 Next, use the `use_git()` function to initialize a Git repository in current project directory. This function is often used alongside `devtools` during R package development.
 
-![use_git]()
+![use_git](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/use_git.PNG)
 
 #### 4. Deveploing Functions
 
@@ -144,7 +144,7 @@ There are five functions developed for R package as follows;
 
 Next, use the use_r() function to create new R script files within your R package project. These files are stored in the R/ directory, which is the central location for all the R functions and code that form the core functionality of your package.
 
-![use_r]()
+![use_r](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/use_r.png)
 
 #### 6.Load Package with `load_all()`
 
@@ -164,7 +164,7 @@ The `check()` function performs automated checks on various aspects of the packa
 
 The function provides a detailed report of any errors, warnings, or notes, helping you identify and resolve issues before distributing your package.
 
-![check]()
+![check](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/check.PNG)
 
 #### 8. Edit the `DESCRIPTION` File
 
@@ -178,7 +178,7 @@ Properly editing the `DESCRIPTION` file is key to ensuring that your package is 
 
 Accurate and complete information in the `DESCRIPTION` file is essential for package’s distribution and use.
 
-![edit_desc]()
+![edit_desc](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/edit_description.PNG)
 
 #### 9. Add an MIT License with `use_mit_license()`
 
@@ -188,7 +188,7 @@ When call `use_mit_license()`, it creates a `LICENSE` file in the root directory
 
 Including this license file in  package clearly communicates the terms under which others can use, modify, and distribute  code. The MIT License is permissive and widely understood, which can encourage other developers to use and contribute to package while protecting  rights as the author.
 
-![mit_lic]()
+![mit_lic](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/mit_license.png)
 
 #### 10. Document R Package with `document()`
 
@@ -202,13 +202,13 @@ Following shows what `document()` does:
 
 Using `document()` keeps  package’s documentation up-to-date and aligned with  code.
 
-![document]()
+![document](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/document.png)
 
 #### 11. Run `check()` Again
 
 After using the `document()` function to update the package documentation, it’s important to run `check()` once more. This step verifies that everything in R package is working correctly and follows best practices. Ideally, `check()` should now pass `R CMD check` with 0 errors, 0 warnings, and 0 notes, ensuring the R package is in good shape.
 
-![check_again]()
+![check_again](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/check_again.PNG)
 
 #### 12. Install Package with `install()`
 
@@ -222,7 +222,7 @@ Follows shows what `install()` does:
 
 This function is crucial for the development workflow, allowing  to iteratively build, install, and test R package.
 
-![install]()
+![install](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/install.PNG)
 
 #### 13. Set Up Testing with `use_testthat()`
 
@@ -236,7 +236,7 @@ Following shows what `use_testthat()` does:
 
 This function helps to get started with testing your package efficiently.
 
-![test]()
+![test](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/test.png)
 
 #### 14. Add Dependencies with `use_package()`
 
@@ -260,7 +260,7 @@ Following shows what `use_readme_rmd()` does:
 
 This function helps to create a well-structured README that provides clear and comprehensive information about R package.
 
-![rmd]()
+![rmd](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/rmd.PNG)
 
 #### 16. Final Checks and Installation
 
@@ -269,15 +269,15 @@ After setting up  R package with functions, documentation, and tests,  need to e
 - **`check()`:** Verifies that R package is well-structured and meets all necessary standards.
 - **`install()`:** Installs the package locally so can test it as if it were a finished product.
 
-![check_final]()
+![check_final](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/check_final.PNG)
 
-![install_final]()
+![install_final](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/install_final.PNG)
 
 #### 17. Creating Vignettes
 
 Creating vignettes for R package is a key step in providing detailed documentation and usage examples. Vignettes are comprehensive guides or tutorials that show how to use R package in a more detailed and narrative way than standard documentation.
 
-![vigneetee]()
+![vigneetee](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/vigneete.png)
 
 Following shows simple step-by-step guide to creating vignettes:
 
@@ -330,13 +330,13 @@ library(nearPointR)
 basemap <- "OpenStreetMap"
 current_location(basemap)
 ```
-![currentloc1]()
+![currentloc1](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/currentloc%201.PNG)
 
 ```{r}
 basemap <- "EsriWorldImagery"
 current_location(basemap)
 ```
-![currentloc2]()
+![currentloc2](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/currentloc%202.PNG)
 
 **2. Spatial Distribution and Accessibility**
 
@@ -347,14 +347,14 @@ category <- "healthcare.pharmacy"
 basemap <- "EsriWorldImagery"
 nearest_locations(category,basemap)
 ```
-![phamacy]()
+![phamacy](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/pharmacy.png)
 
 ```{r}
 category <- "healthcare.hospital"
 basemap <- "OpenStreetMap"
 nearest_locations(category,basemap)
 ```
-![phamacy2]()
+![phamacy2](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/phamcy2.png)
 
 **3. Proximity Analysis and Navigation Route Planning**
 
@@ -364,13 +364,13 @@ The average distances to nearest important locations provide users with essentia
 category <- "healthcare.hospital"
 navigate_to_closest(category)
 ```
-![google]()
+![google](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/navigate.png)
 
 After executing Google map will open on your default web browser with best navigation route to closest category marker. **Screenshot of Output** 
 
 **4. Showing nearest locations data as dataframe**
 
-![dataframe]()
+![dataframe](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/sc1.png)
 
 **Download the dataframe as csv or geojson or kml format**
 

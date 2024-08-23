@@ -7,6 +7,13 @@ This repository contains the complete development process and documentation for 
 ## Table of Content
 
 - [Introduction and Motivation](#introduction-and-motivation)
+- [Package Overview](#package-overview)
+- [Arguments](#arguments)
+- [Methodology](#methodology)
+  - [Data Description and Exploration](#data-description-and-exploration)
+  - [R Package Development](#r-package-development)
+- [Results](#results)
+- [Discussion](#discussion) 
 
 ## Introduction and Motivation
 
@@ -66,7 +73,7 @@ print(api_url)
 
 Understanding the structure and content of the data is essential for maximizing the utility of the Interactive Nearest Location Visualization R package. The data exploration process provides available data attributes, their distributions, and potential patterns. Here are some key aspects of data exploration:
 
-**1.	Data Attributes:**
+### **1.	Data Attributes:**
 
 On map view, following data attributes can be seen in popups. And also these data attributes can be seen in downloaded formats (csv, geojson, kml)
 
@@ -80,7 +87,7 @@ On map view, following data attributes can be seen in popups. And also these dat
 - Phone number – Contact number
 - Web site – Web site relevant to service
 
-**2. Spatial Distribution:**
+### **2. Spatial Distribution:**
 
 Analyzing the distribution of location data on a map helps identify clusters and trends. Visualizing the spatial distribution of various location types can reveal the geographic availability of different services.
 
@@ -324,7 +331,7 @@ The results provide a deeper understanding of the spatial distribution of import
 library(nearPointR)
 ```
 
-**1. Visualizes the user’s current location on an interactive map**
+### **1. Visualizes the user’s current location on an interactive map**
 
 ```{r}
 basemap <- "OpenStreetMap"
@@ -338,7 +345,7 @@ current_location(basemap)
 ```
 ![currentloc2](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/currentloc%202.PNG)
 
-**2. Spatial Distribution and Accessibility**
+### **2. Spatial Distribution and Accessibility**
 
 The spatial distribution of different types of important locations offers a clear overview of areas with high concentrations of services. This information help users in identifying commercial zones, popular residential areas, and potential gaps in service coverage. For instance, a dense cluster of restaurants in a particular area might indicate a vibrant dining scene, while a sparse distribution of pharmacies could highlight a need for improved accessibility to healthcare services.
 
@@ -356,7 +363,7 @@ nearest_locations(category,basemap)
 ```
 ![phamacy2](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/phamcy2.png)
 
-**3. Proximity Analysis and Navigation Route Planning**
+### **3. Proximity Analysis and Navigation Route Planning**
 
 The average distances to nearest important locations provide users with essential information for planning their routes and optimizing their travel time. The package’s functionality assists users in finding the closest services, reducing travel distances, and making more efficient choices.
 
@@ -368,11 +375,11 @@ navigate_to_closest(category)
 
 After executing Google map will open on your default web browser with best navigation route to closest category marker. **Screenshot of Output** 
 
-**4. Showing nearest locations data as dataframe**
+### **4. Showing nearest locations data as dataframe**
 
 ![dataframe](https://github.com/Prasadmadhusanka/Development-of-comprehensive-R-Package-for-visualization-interactive-nearest-location-using-Leaflet/blob/main/images/sc1.png)
 
-**Download the dataframe as csv or geojson or kml format**
+### **Download the dataframe as csv or geojson or kml format**
 
 ```{r}
 category <- "healthcare.pharmacy"
